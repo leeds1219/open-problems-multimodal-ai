@@ -34,7 +34,7 @@ How do we reason over *time* — at length, in the right order, and in real time
 ## 4.4 Audio-Visual Joint Understanding & Synchronization
 **Why it's hard:** Models often lean on one dominant modality; genuine joint reasoning requires temporally aligning sound events with visuals and detecting desynchronization. Separating *temporal* sync from *semantic* correspondence is under-measured.
 
-**Key papers/benchmarks:** *DAVE* (diagnostic audio-visual eval) ✅ [arXiv:2503.09321](https://arxiv.org/abs/2503.09321); *AV-SyncBench* (temporal vs. semantic sync) ⚠️ [arXiv:2607.00726](https://arxiv.org/abs/2607.00726) — **re-check: same-month 2026 ID, not fetched to depth.**
+**Key papers/benchmarks:** *DAVE* (diagnostic audio-visual eval) ✅ [arXiv:2503.09321](https://arxiv.org/abs/2503.09321); *AV-SyncBench: Decoupled Benchmarking of Temporal and Semantic Audio-Visual Synchronization*, Interspeech 2026 — ✅ [arXiv:2607.00726](https://arxiv.org/abs/2607.00726).
 **Directions:** forcing cross-modal dependency (unanswerable from one modality); fine-grained audio-visual alignment; robustness to modality dissonance.
 
 ---
@@ -49,5 +49,5 @@ How do we reason over *time* — at length, in the right order, and in real time
 
 ## Unverified / candidates
 - **EgoSchema** ID (2308.09126) and **TempCompass** ID (2403.00476) came via secondary sources — benchmarks are well-attested, re-confirm the IDs.
-- **AV-SyncBench** (2607.00726) is a same-month 2026 preprint; treat as unconfirmed until fetched.
 - AVQA and OmniBench appeared only in summaries — do not cite without direct verification.
+- *AV-SyncBench* (2607.00726) was **verified** against the arXiv API on 2026-07-09 and promoted to the main list above.

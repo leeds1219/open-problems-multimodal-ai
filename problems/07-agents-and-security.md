@@ -24,7 +24,7 @@ Why do multimodal agents (GUI / computer-use / web / embodied) break over long h
 ## 7.1 Visual Grounding of UI Elements
 **Why it's hard:** Agents must map an instruction to precise pixel coordinates across heterogeneous mobile/desktop/web UIs, dense icons, and high-res professional apps. Grounding failure is the dominant OSWorld error mode and directly caps task success.
 
-**Key papers:** SeeClick ✅ [arXiv:2401.10935](https://arxiv.org/abs/2401.10935); ScreenSpot-Pro ⚠️ [arXiv:2504.07981](https://arxiv.org/abs/2504.07981).
+**Key papers:** SeeClick ✅ [arXiv:2401.10935](https://arxiv.org/abs/2401.10935); *ScreenSpot-Pro: GUI Grounding for Professional High-Resolution Computer Use* ✅ [arXiv:2504.07981](https://arxiv.org/abs/2504.07981).
 **Benchmarks:** ScreenSpot, ScreenSpot-Pro, OSWorld.
 **Directions:** grounding-specific pretraining, set-of-marks / accessibility-tree fusion, high-res adaptive-focus perception.
 
@@ -33,7 +33,7 @@ Why do multimodal agents (GUI / computer-use / web / embodied) break over long h
 ## 7.2 Long-horizon Reliability & Compounding Errors
 **Why it's hard:** Even a small per-step error rate compounds multiplicatively across dependent steps, collapsing reliable short-task performance into near-systematic failure. pass@1 poorly captures variance across episodes.
 
-**Key papers:** *Measuring Long Horizon Execution in LLMs* ⚠️ [arXiv:2509.09677](https://arxiv.org/abs/2509.09677); *Beyond pass@1: A Reliability Science Framework* ⚠️ [arXiv:2603.29231](https://arxiv.org/abs/2603.29231) (2026 preprint — re-check).
+**Key papers:** *The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs*, ICLR 2026 — ✅ [arXiv:2509.09677](https://arxiv.org/abs/2509.09677); *Beyond pass@1: A Reliability Science Framework for Long-Horizon LLM Agents* ✅ [arXiv:2603.29231](https://arxiv.org/abs/2603.29231).
 **Benchmarks:** OSWorld, AndroidWorld, Mind2Web.
 **Directions:** error-recovery/backtracking, self-audit, reliability metrics beyond mean success.
 
@@ -42,7 +42,7 @@ Why do multimodal agents (GUI / computer-use / web / embodied) break over long h
 ## 7.3 Episodic Memory Over Long Multimodal Histories & State Tracking
 **Why it's hard:** Screenshot/video histories are huge; lossy compression and similarity retrieval introduce errors that *themselves* compound, and agents must track evolving entity state across many steps.
 
-**Key papers:** *A Multimodal Agent with Long-Term Memory* ⚠️ [arXiv:2508.09736](https://arxiv.org/abs/2508.09736); *AMA-Bench* ⚠️ [arXiv:2602.22769](https://arxiv.org/abs/2602.22769) (2026 preprint — re-check).
+**Key papers:** *Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory* (M3-Agent) ✅ [arXiv:2508.09736](https://arxiv.org/abs/2508.09736); *AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications*, ICML 2026 — ✅ [arXiv:2602.22769](https://arxiv.org/abs/2602.22769).
 **Directions:** structured spatiotemporal memory, verifiable retrieval, long-context vs. memory-augmentation trade-off studies.
 
 ---
@@ -50,7 +50,7 @@ Why do multimodal agents (GUI / computer-use / web / embodied) break over long h
 ## 7.4 Reward Specification / LMM-as-Judge Reliability
 **Why it's hard:** Non-deterministic environments have no single gold trajectory, so evaluation leans on LMM judges — which show position/length/self-preference bias and, critically, *perceptual judgment bias*: rewarding plausible text over what the image actually shows.
 
-**Key papers:** *MLLM-as-a-Judge* ✅ [arXiv:2402.04788](https://arxiv.org/abs/2402.04788); *Mitigating Perceptual Judgment Bias* ⚠️ [arXiv:2606.02578](https://arxiv.org/abs/2606.02578) (2026 preprint — re-check).
+**Key papers:** *MLLM-as-a-Judge* ✅ [arXiv:2402.04788](https://arxiv.org/abs/2402.04788); *Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge* ✅ [arXiv:2606.02578](https://arxiv.org/abs/2606.02578).
 **Benchmarks:** MLLM-as-a-Judge; WebVoyager's GPT-4V auto-eval protocol.
 **Directions:** perceptual-perturbation reward modeling, execution-based over judge-based eval, bias-mitigation pipelines.
 
@@ -59,7 +59,7 @@ Why do multimodal agents (GUI / computer-use / web / embodied) break over long h
 ## 7.5 Real-Time Latency & Asynchrony
 **Why it's hard:** The world changes during inference, so a reasoned action can be stale on arrival; synchronous agents that pause to think fail badly under delay (ReAct GPT-4o: 47% sync → 11% async on Robotouille).
 
-**Key papers:** *Robotouille* ✅ [arXiv:2502.05227](https://arxiv.org/abs/2502.05227), ICLR 2025; *RRARA* (async reflect) ⚠️ [arXiv:2506.07223](https://arxiv.org/abs/2506.07223).
+**Key papers:** *Robotouille* ✅ [arXiv:2502.05227](https://arxiv.org/abs/2502.05227), ICLR 2025; *RRARA* (Rapid-Reflex Async-Reflect embodied agent) ✅ [arXiv:2506.07223](https://arxiv.org/abs/2506.07223).
 **Benchmarks:** Robotouille.
 **Directions:** async reflect/act loops, speculative tool-calling, "learning to wait" temporal synchronization.
 
@@ -69,11 +69,11 @@ Why do multimodal agents (GUI / computer-use / web / embodied) break over long h
 **Why it's hard:** Instructions injected into the *visual* environment (pop-ups, chat, on-screen text) hijack agents that treat screen content as trusted; in multi-agent memory-sharing systems a single adversarial image can propagate exponentially. The core open question: how to *provably* isolate the trusted intent channel from the untrusted observation channel.
 
 **Key papers:** *Attacking Vision-Language Computer Agents via Pop-ups* ✅ [arXiv:2411.02391](https://arxiv.org/abs/2411.02391) (≈92.7%/73.1% attack-hit on OSWorld/VWA); Agent Smith ✅ [arXiv:2402.08567](https://arxiv.org/abs/2402.08567).
-**Benchmarks:** VPI-Bench ⚠️ [arXiv:2506.02456](https://arxiv.org/abs/2506.02456); attacks measured on OSWorld / VisualWebArena.
+**Benchmarks:** *VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents* ✅ [arXiv:2506.02456](https://arxiv.org/abs/2506.02456); attacks measured on OSWorld / VisualWebArena.
 **Directions:** provable containment of infectious jailbreaks (open per Agent Smith), trusted-vs-untrusted screen-content separation, red-team environment-injection suites.
 
 ---
 
 ## Unverified / candidates
-- Several citations carry early-2026 arXiv IDs (2602.*, 2603.*, 2606.*) that predate compilation but were **not fetched to primary-source depth** — marked ⚠️, re-check before formal use.
+- All early-2026 arXiv IDs cited above (2602.22769, 2603.29231, 2606.02578) plus the 2504/2506/2508/2509 IDs were **verified against the arXiv API on 2026-07-09** and are now marked ✅.
 - EMemBench, MIRAGE, EVA appeared only in recent listings — excluded from the core lists.
