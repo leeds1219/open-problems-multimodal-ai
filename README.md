@@ -55,6 +55,8 @@ Multimodal AI, treated as one field. The clusters are peers — perception, repr
 
 `open_problems_multimodal_agents.md` at the repo root is an earlier, deeper-dive draft on the agents slice (cluster 7), kept for reference and cross-linked.
 
+**Active research track:** [tracks/media-art-agentic-memory.md](tracks/media-art-agentic-memory.md) — a narrowed direction threading §7.3 → §5.5 → §8.3 into a scoped problem statement (memory-bounded consistency in media-art agents).
+
 ---
 
 ## Contributing
