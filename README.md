@@ -1,1 +1,0 @@
-# open-problems-multimodal-ai
